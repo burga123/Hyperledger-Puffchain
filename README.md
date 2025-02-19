@@ -170,12 +170,25 @@ Puffchain is a custom blockchain network built on Hyperledger Fabric, designed f
 
 
 **View all accounts with  balance and bank details**
+- Script wrapped and run  in a shell file 
+```bash
+   cd  network
+   ./getallaccounts.sh
+```
+- Source command
 ```bash
    peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile "${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem" -C mychannel -n puff --peerAddresses localhost:7051 --tlsRootCertFiles "${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt" --peerAddresses localhost:9051 --tlsRootCertFiles "${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt" -c '{"Args":["GetAllAccounts"]}'
 ```
 
 
 **Adjusting packers**
+- Script wrapped and run  in a shell file 
+```bash
+   cd  network
+   ./adjustpack.sh
+```
+- Source command
+
 ```bash
     peer chaincode query -C mychannel -n puff -c '{"Args":["AdjustPackers"]}'
 ```
